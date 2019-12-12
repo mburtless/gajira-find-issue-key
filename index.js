@@ -12,9 +12,11 @@ const config = YAML.parse(fs.readFileSync(configPath, 'utf8'))
 
 async function exec () {
   try {
+	const parsed = parseArgs()
+	console.log(`Args parsed: ${parsed}`)
     const result = await new Action({
       githubEvent,
-      argv: parseArgs(),
+      argv: parsed,
       config,
     }).execute()
 
