@@ -35,7 +35,7 @@ async function exec () {
     }
 
     console.log('No issueKeys found.')
-    core.setNeutral()
+    //core.setNeutral()
   } catch (error) {
     core.setFailed(error.toString())
   }
